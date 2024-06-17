@@ -291,7 +291,8 @@ void AADVPlayer::InputInteract() {
 	ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_GameTraceChannel2));
 
 	params.AddIgnoredActor(this);
-	bool bHit = UKismetSystemLibrary::SphereTraceSingleForObjects(GetWorld(), startPos, endPos, 200.f, ObjectTypesArray, false,TArray<AActor*>(), EDrawDebugTrace::ForDuration, hitInfo, true);
+	bool bHit = UKismetSystemLibrary::SphereTraceSingleForObjects(GetWorld(), startPos, endPos, 200.f, 
+		ObjectTypesArray, false,TArray<AActor*>(), EDrawDebugTrace::ForDuration, hitInfo, true);
 	if (bHit) {
 		auto hitComp = hitInfo.GetActor();
 		UE_LOG(LogTemp, Log, TEXT("Pressed"));
