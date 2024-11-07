@@ -292,7 +292,7 @@ void AADVPlayer::InputInteract() {
 
 	params.AddIgnoredActor(this);
 	bool bHit = UKismetSystemLibrary::SphereTraceSingleForObjects(GetWorld(), startPos, endPos, 200.f, 
-		ObjectTypesArray, false,TArray<AActor*>(), EDrawDebugTrace::ForDuration, hitInfo, true);
+		ObjectTypesArray, false,TArray<AActor*>(), EDrawDebugTrace::None, hitInfo, true);
 	if (bHit) {
 		auto hitComp = hitInfo.GetActor();
 		UE_LOG(LogTemp, Log, TEXT("Pressed"));
